@@ -11,7 +11,7 @@
 		<jdk.version>1.8</jdk.version>
 		<spring.version>4.3.8.RELEASE</spring.version>
 		<spring.batch.version>3.0.7.RELEASE</spring.batch.version>
-		<mariadb.driver.version>2.0.1</mariadb.driver.version>
+		<mariadb.driver.version>2.0.2</mariadb.driver.version>
 	</properties>
 
 	<dependencies>
@@ -53,7 +53,7 @@
 		<dependency>
 		    <groupId>org.mariadb.jdbc</groupId>
 		    <artifactId>mariadb-java-client</artifactId>
-		    <version>2.0.1</version>
+		    <version>${mariadb.driver.version}</version>
 		</dependency>
 
 	</dependencies>

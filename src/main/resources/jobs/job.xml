@@ -18,7 +18,7 @@
 		scope="step">
 		<property name="dataSource" ref="dataSource" />
 		<property name="sql"
-			value="select ID, responseCode, lastUpdate from STATUS where ID > #{jobParameters['ID']}" />
+			value="select ID, responseCode, lastUpdate from status where ID > #{jobParameters['ID']}" />
 		<property name="rowMapper">
 			<bean class="com.batch.StatusRowMapper" />
 		</property>
@@ -33,7 +33,7 @@
 				class="org.springframework.batch.item.database.support.SqlPagingQueryProviderFactoryBean">
 				<property name="dataSource" ref="dataSource" />
 				<property name="selectClause" value="select id, responseCode, lastUpdate" />
-				<property name="fromClause" value="from STATUS" />
+				<property name="fromClause" value="from status" />
 				<property name="whereClause" value="where id=:ID" />
 				<property name="sortKey" value="id" />
 			</bean>
@@ -67,7 +67,7 @@
 	<bean id="userUnmarshaller" class="org.springframework.oxm.xstream.XStreamMarshaller">
 		<property name="aliases">
 			<util:map id="aliases">
-				<entry key="user" value="springbatch.Status" />
+				<entry key="user" value="com.batch.Status" />
 			</util:map>
 		</property>
 	</bean>
@@ -89,6 +89,4 @@
 			</bean>
 		</property>
 	</bean>
-	
-	
 </beans>
